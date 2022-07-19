@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>JAC</title>
+    </head>
+    <body>
+        <p class="title isColored hasShadow">It's just a counter!</p>
+        <p id="subtitle" class="subtitle isColored hasShadow">What did you expect?</p>
+        <div class="container">
+            <p id="display" class="display isColored hasShadow">0</p>
+            <div class="buttons-container">
+                <button id="add" class="add">+1</button>
+                <button id="remove" class="remove">-1</button>
+                <button id="reset" class="reset">Reset</button>
+            </div>
+        </div>
+        <footer>
+            <p>© 2022 Luigi Sacco.</p>
+        </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var counter = 0;
+                const container = document.querySelector(`.container`);
+                const display = document.querySelector(`#display`);
+                const subtitle = document.querySelector(`#subtitle`);
+                const add = document.querySelector(`#add`);
+                const remove = document.querySelector(`#remove`);
+
+                document.addEventListener(`click`, (e) => {
+
+                    if (e.target.matches(`button`)) {
+
+                        let id = e.target.id;
+
+                        if (id === "add") counter++;
+                        else if (id === "remove") counter--;
+                        else counter = 0;
+
+                        display.textContent = counter;
+
+                        if (counter >= 0 && counter < 9) {
+                            add.style.visibility = "visible";
+                            remove.style.visibility = "visible"
+                            subtitle.textContent = "There you go!";
+                        }
+                        if (counter > 9) subtitle.textContent = "Ok you can stop now.";
+                        if (counter > 49) subtitle.textContent = "Are you serious? ...";
+                        if (counter > 99) subtitle.textContent = "Just stop!";
+                        if (counter > 149) subtitle.textContent = "Ok then, keep clicking, i don't care...";
+                        if (counter > 199) subtitle.textContent = "I said i don't care... You're wasting your time...";
+                        if (counter > 249) subtitle.textContent = "It's enough! Last warning! STOP CLICKING!";
+                        if (counter > 299 ) {
+                            subtitle.textContent = "Is there an end?";
+                            add.textContent = "Reset";
+                            remove.textContent = "Reset";
+                            container.style.flexDirection = "column-reverse";
+                        }
+                        if (counter > 319) {
+                            subtitle.textContent = "Ok, i give up! You won... :(";
+                            container.style.flexDirection = "column";
+                            add.textContent = "+1";
+                            remove.textContent = "-1";
+                        }
+                        if (counter > 332) {
+                            subtitle.textContent = "Just joking, i won! :)"
+                            add.style.visibility = "hidden";
+                            remove.style.visibility = "hidden"
+                        }
+                    }  
+                });
+            });
+        </script>
+    </body>
+</html>
