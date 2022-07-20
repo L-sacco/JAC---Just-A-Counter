@@ -1,3 +1,6 @@
-# JAC is just a counter... but has some style!
+## JAC is just a counter... but has some style!
 
-## https://jacisjustacounter.netlify.app
+### Link: https://jacisjustacounter.netlify.app
+
+### It's just a counter, what do you expect? It counts clicks and it can even remove some if you want to...
+### ... Just... Don't click too many times please...
