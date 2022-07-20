@@ -1,13 +1,13 @@
 const Counter = () => {
-    const container = document.querySelector('.container')
-    const display = document.querySelector('#display')
-    const subtitle = document.querySelector(`#subtitle`),
-    addButton = document.querySelector(`#add`),
-    removeButton = document.querySelector(`#remove`)
+    const   container = document.querySelector('.container'),
+            display = document.querySelector('#display'),
+            subtitle = document.querySelector(`#subtitle`),
+            addButton = document.querySelector(`#add`),
+            removeButton = document.querySelector(`#remove`)
     var counter = 0
+
     document.addEventListener('click', (e) => {
         if (e.target.matches('button')) {
-
             let id = e.target.id
     
             if (id === "add") counter++
@@ -15,7 +15,8 @@ const Counter = () => {
             else counter = 0
     
             display.textContent = counter
-    
+            
+            // Easter egg
             if (counter >= 0 && counter < 10) {
                 addButton.style.visibility = "visible"
                 removeButton.style.visibility = "visible"
@@ -29,20 +30,20 @@ const Counter = () => {
             if (counter == 200) subtitle.textContent = "It's enough! Last warning! STOP CLICKING!"
             if (counter == 230) {
                 subtitle.textContent = "Is there an end?"
-                add.textContent = "Reset"
-                remove.textContent = "Reset"
+                addButton.textContent = "Reset"
+                removeButton.textContent = "Reset"
                 container.style.flexDirection = "column-reverse"
             }
             if (counter == 280) {
                 subtitle.textContent = "Ok, i give up! You won... :("
                 container.style.flexDirection = "column"
-                add.textContent = "+1"
-                remove.textContent = "-1"
+                addButton.textContent = "+1"
+                removeButton.textContent = "-1"
             }
             if (counter == 300) {
                 subtitle.textContent = "Just joking, i won! :)"
-                add.style.visibility = "hidden"
-                remove.style.visibility = "hidden"
+                addButton.style.visibility = "hidden"
+                removeButton.style.visibility = "hidden"
             }
         }
     })
