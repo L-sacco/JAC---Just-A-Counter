@@ -11,16 +11,17 @@
     </head>
     <body>
         <p class="title isColored hasShadow">It's just a counter!</p>
-        <p id="subtitle" class="subtitle isColored hasShadow">What did you expect?</p>
+        <p id="subtitle" class="subtitle isColored hasShadow">What do you expect?</p>
         <div class="container"></div>
         <footer>
             <p>© 2022 Luigi Sacco.</p>
         </footer>
-        <script src="./js/createElements.js" defer></script>
+        <script src="./js/createElement.js" defer></script>
+        <script src="./js/createComponent.js" defer></script>
         <script src="./js/counter.js" defer></script>
         <script defer>
             document.addEventListener("DOMContentLoaded", function() {                 
-                CreateElements();
+                CreateComponent();
                 Counter();
             })
         </script>
